@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 225 30% 7%;
+    --foreground: 210 40% 98%;
+
+    --card: 225 25% 10%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 225 25% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 188 100% 50%;
+    --primary-foreground: 225 30% 7%;
+
+    --secondary: 225 20% 15%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 225 20% 15%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 188 100% 50%;
+    --accent-foreground: 225 30% 7%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 225 20% 18%;
+    --input: 225 20% 18%;
+    --ring: 188 100% 50%;
+
+    --radius: 0.75rem;
+
+    --speed-glow: 188 100% 50%;
+    --gradient-start: 225 30% 7%;
+    --gradient-end: 225 25% 10%;
+  }
+}
+
+@layer base {
+  @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&display=swap");
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI",
+      sans-serif;
+  }
+}
