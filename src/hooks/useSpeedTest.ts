@@ -1,3 +1,4 @@
+import { CLOUDFLARE_SPEED_TEST_DOWNLOAD_URL, CLOUDFLARE_TRACE_URL } from "@/const/urls";
 import { useState, useEffect } from "react";
 
 type TestStatus = "idle" | "testing" | "complete";
@@ -11,7 +12,7 @@ export const useSpeedTest = () => {
   const measurePing = async (): Promise<number | null> => {
     const start = performance.now();
     try {
-      await fetch("https://www.cloudflare.com/cdn-cgi/trace", { 
+      await fetch(CLOUDFLARE_TRACE_URL, { 
         method: "HEAD",
         cache: "no-cache" 
       });
@@ -29,7 +30,7 @@ export const useSpeedTest = () => {
 
     for (const size of testSizes) {
       try {
-        const url = `https://speed.cloudflare.com/__down?bytes=${size * 1024 * 1024}`;
+        const url = `${CLOUDFLARE_SPEED_TEST_DOWNLOAD_URL}?bytes=${size * 1024 * 1024}`;
         const startTime = performance.now();
         
         const response = await fetch(url, { cache: "no-cache" });
