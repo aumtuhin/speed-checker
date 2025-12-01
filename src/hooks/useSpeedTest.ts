@@ -24,7 +24,7 @@ export const useSpeedTest = () => {
   };
 
   const measureDownloadSpeed = async (): Promise<number> => {
-    const testSizes = [1, 2, 5]; // MB
+    const testSizes = [1, 2, 5, 10]; // MB
     let totalSpeed = 0;
     let measurements = 0;
 
